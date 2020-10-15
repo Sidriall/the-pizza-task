@@ -7,9 +7,13 @@ import { useSelector } from 'react-redux';
 import { selectCart } from 'store/slices/cartSlice';
 
 const IndexPage = () => {
-  const { items, deliveryCost, total, currency }: IOrderProps = useSelector(
-    selectCart
-  );
+  const {
+    items,
+    deliveryCost,
+    total,
+    currency,
+    totalQuantity,
+  }: IOrderProps = useSelector(selectCart);
 
   return (
     <Box margin={5}>
@@ -20,6 +24,7 @@ const IndexPage = () => {
           deliveryCost={deliveryCost}
           total={total}
           currency={currency}
+          totalQuantity={totalQuantity}
         />
       </TableContainer>
       <OrderForm />
